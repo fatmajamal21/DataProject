@@ -50,7 +50,7 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = Profile::query()->findOrFail($id);
-        return view('profiles.edit', compact('profile'));
+        return view('profile.edit', compact('profile'));
     }
     public function update(Request $request)
     {

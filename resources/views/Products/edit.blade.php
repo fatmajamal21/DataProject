@@ -10,7 +10,7 @@
 
 </head>
 <body><div class="container">
-    <h1>Edit Category</h1>
+    <h1>Edit product</h1>
   {{-- // DataProject/products/product --}}
     <!-- Display validation errors -->
     {{-- @if ($errors->any())
@@ -26,8 +26,9 @@
     <!-- Form for editing category -->
     <form method="POST" action="{{ route('DataProject.product.update') }}">
         @csrf
-        @method('POST')
         <div class="form-group">
+            <input name="id" value="{{ $product->id }}" type="hidden">
+
             <label for="name">product Name</label>
             <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $product->name) }}" required>
         </div>
@@ -41,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="name">product Qun</label>
-            <input type="text" name="Qun" id="qun" class="form-control" value="{{ old('qun', $product->qun) }}" required>
+            <input type="text" name="Qun" id="" class="form-control" value="{{ old('qun', $product->qun) }}" required>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Update product</button>
     </form>

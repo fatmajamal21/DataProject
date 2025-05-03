@@ -37,9 +37,9 @@
 
             <button type="submit" class="btn" >Update </button>
             <br></br>
-
-            {{-- <a  href="{{ route('DataProject.profiles.index')}}" >العودة للصفحة الرئيسية   </a> --}}
         </form>
+
+           {{-- <a  href="{{ route('DataProject.profiles.index')}}" >العودة للصفحة الرئيسية   </a> --}}
     </div>
 
     <!-- Add Bootstrap JS and dependencies -->

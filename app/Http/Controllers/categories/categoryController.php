@@ -31,7 +31,7 @@ class categoryController extends Controller
             'name' => $request->name,
         ]);
         $category->save();
-        return redirect()->route('DataProject.categories.index')->with('success', 'category updated successfully!');
+        return redirect()->route('DataProject.category.index')->with('success', 'category updated successfully!');
     }
 
 

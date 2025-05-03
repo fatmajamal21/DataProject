@@ -23,10 +23,9 @@
         </div>
     @endif
 
-    <!-- Form for editing category -->
     <form method="POST" action="{{ route('DataProject.category.update') }}">
         @csrf
-        @method('POST')
+     <input name="id" value="{{ $category->id }}" type="hidden">
 
         <div class="form-group">
             <label for="name">Category Name</label>
@@ -34,7 +33,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">Update Category</button>
-    </form>
+    </form>
 
     <a href="{{ route('DataProject.category.index') }}" class="btn btn-secondary mt-3">Back to Categories</a>
 </div>

@@ -27,6 +27,15 @@ Route::prefix('DataProject')->name('DataProject.')->group(function () {
 
         Route::get('/home', 'home')->name('home');
     });
+
+    Route::prefix('products')->name('product.')->controller(productController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::post('/add', 'add')->name('add');
+        Route::get('/create', 'create')->name('create');
+        Route::delete('/delete/{id}', 'delete')->name('delete');
+    });
     Route::prefix('profiles')->name('profiles.')->controller(ProfileController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/edit/{id}', 'edit')->name('edit');
@@ -37,14 +46,6 @@ Route::prefix('DataProject')->name('DataProject.')->group(function () {
     });
 
     Route::prefix('categories')->name('category.')->controller(categoryController::class)->group(function () {
-        Route::get('/', 'index')->name('index');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::post('/update', 'update')->name('update');
-        Route::post('/add', 'add')->name('add');
-        Route::get('/create', 'create')->name('create');
-        Route::delete('/delete/{id}', 'delete')->name('delete');
-    });
-    Route::prefix('products')->name('product.')->controller(productController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/edit/{id}', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');

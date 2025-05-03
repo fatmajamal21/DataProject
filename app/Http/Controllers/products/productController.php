@@ -22,23 +22,23 @@ class productController extends Controller
     }
     public function update(Request $request)
     {
-
         $request->validate([
             'name' => 'required',
             'desc' => 'required',
             'price' => 'required',
-            'qun' => 'required',
+            'qun' => 'required|integer',  // التأكد من أن الحقل يحتوي على قيمة صحيحة
         ]);
-        //  dd($request);
-        $product = product::query()->findOrFail($request->id);
 
+        $product = Product::findOrFail($request->id);
         $product->update([
             'name' => $request->name,
             'desc' => $request->desc,
             'price' => $request->price,
-            'qun' => $request->qun,
+            'qun' => $request->qun, // تأكد من إرسال قيمة صالحة هنا
         ]);
+
         $product->save();
+        dd($request);
         return redirect()->route('DataProject.product.index')->with('success', 'product updated successfully!');
     }
 
